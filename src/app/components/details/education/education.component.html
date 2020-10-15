@@ -1,14 +1,23 @@
 <section class="resume-section" id="education">
   <div class="resume-section-content">
     <h2 class="mb-5">Education</h2>
-    <div class="d-flex flex-column flex-md-row justify-content-between mb-5" *ngFor="let data of
-    rowData">
-      <div class="flex-grow-1">
-        <h3 class="mb-0">{{data.degree}}</h3>
-        <div class="subheading mb-3">{{data.university}}</div>
-        <p>{{data.grade}}</p>
-      </div>
-      <div class="flex-shrink-0"><span class="text-primary">{{data.year}}</span></div>
-    </div>
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Standard</th>
+        <th scope="col">Board/University</th>
+        <th scope="col">Year</th>
+        <th scope="col">Remarks</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let data of rowData">
+        <th scope="row">{{data.degree}}</th>
+        <td>{{data.university}}</td>
+        <td>{{data.year}}</td>
+        <td>{{data.grade}}</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </section>

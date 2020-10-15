@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from "@angular/common";
 import {Router} from "@angular/router";
 
 @Component({
@@ -8,12 +9,31 @@ import {Router} from "@angular/router";
 })
 export class LeftSideMenuComponent implements OnInit {
   collapse:boolean;
-  constructor( private router:Router) {this.collapse=false; }
+  activeRoute:number;
+  constructor(location: Location, private router:Router) {
+    this.collapse=false;
+    router.events.subscribe(val => {
+      this.activeRoute=1;
+      if (location.path() == "/summary") {
+        this.activeRoute=1;
+      }
+      if (location.path() == "/professional") {
+        this.activeRoute=2;
+      }
+      if (location.path() == "/education") {
+        this.activeRoute=3;
+      }
+      if (location.path() == "/skills") {
+        this.activeRoute=4;
+      }
+      if (location.path() == "/personal") {
+        this.activeRoute=5;
+      }
+
+    });
+  }
 
   ngOnInit(): void {
-  }
-  goToSummary() {
-    this.router.navigate(['/summary']);
   }
   collapseONOff(){
     this.collapse=!this.collapse;

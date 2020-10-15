@@ -1,12 +1,16 @@
 <section class="resume-section" id="experience">
   <div class="resume-section-content">
     <h2 class="mb-5">Experience</h2>
-    <div class="d-flex flex-column flex-md-row justify-content-between mb-5" *ngFor="let data of
-    rowData">
+    <div class="d-flex flex-column flex-md-row justify-content-between mb-5 " *ngFor="let data of rowData">
       <div class="flex-grow-1">
         <h3 class="mb-0">{{data.dsignation}}</h3>
         <div class="subheading mb-3">{{data.name}}</div>
-        <p>{{data.info}}</p>
+        <div *ngFor="let abc of data.info">
+          <p class="font-weight-bold">{{abc.project}}</p>
+          <ul>
+            <li  *ngFor="let rsp of abc.responsibility">{{rsp.rs}}</li>
+          </ul>
+        </div>
       </div>
       <div class="flex-shrink-0"><span class="text-primary">{{data.start}} - {{data.end}}</span></div>
     </div>

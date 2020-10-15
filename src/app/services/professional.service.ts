@@ -8,9 +8,78 @@ export class ProfessionalService {
   constructor() { }
   public getProfessionalData() {
     return [
-      { name: 'INTELITEC SOLUTIONS', dsignation: 'SENIOR WEB DEVELOPER', start: 'March 2013',end:'present',info:'Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.' },
-      { name: 'INTELITEC SOLUTIONS', dsignation: 'WEB DEVELOPER', start: 'December 2011',end:'March 2013',info:'Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.' },
-      { name: 'SHOUT! MEDIA PRODUCTIONS', dsignation: 'JUNIOR WEB DEVELOPER', start: 'July 2010',end:'December 2011',info:'Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.' },
+      {
+        name: 'Sigma Systems Pvt Ltd', dsignation: 'SOFTWARE DEVELOPER', start: 'May 2016', end: 'present' +
+          ' 2016', info: [
+          {
+            project: 'Inventory Management',
+            responsibility: [
+              {rs: 'Design web applications according to client briefs and modify designs to meet changes in client specifications'},
+              {rs: 'Creating modular, responsive template using bootstrap and css.'},
+              {rs: 'Identify ways to improve UI design and development'},
+              {rs: 'Supervise junior developers, provide training and motivate team members'},
+              {rs: 'Work effectively within collaborative team to identify and resolve issues'},
+              {rs: 'Working on Junit part, Familiarity with build-tools such as Maven'},
+              {rs: 'Manage task effectively and prioritize accordingly'},
+              {rs: 'Environment- Angular, HTML, CSS, JavaScript, Bootstrap, Java'}
+            ]
+          },
+          {
+            project: 'Order Management',
+            responsibility: [
+              {rs: 'Develop individual modules according to requirement '},
+              {rs: 'Developed the Front End User Interface using HTML, JavaScript, Jquery'},
+              {rs: 'Identify ways to improve UI design and development'},
+              {rs: 'Build custom JavaScript MVC apps using similar framework'},
+              {rs: 'Manage task effectively and prioritize accordingly'},
+              {rs: 'Work effectively within collaborative team to identify and resolve issues'},
+              {rs: 'Engage in end to end system design and development processes'},
+              {rs: 'Ensure that application releases are packaged and deployed to the production'},
+              {rs: 'Environment- HTML, CSS, JavaScript, Bootstrap, jQuery, Java, Play/Scala'}
+            ]
+          }
+
+
+        ]
+      },
+
+      {
+        name: 'Yogi Softech Pvt Ltd', dsignation: 'SOFTWARE DEVELOPER', start: 'Nov 2013', end: 'April 2016',
+        info: [
+          {
+            project: 'IASMS (Institute and School Management System) ',
+            responsibility: [
+              {rs: 'Individual Module Development According to Requirement Analysis'},
+              {rs: 'Developed the Front End User Interface using HTML, JavaScript, Angular '},
+              {rs: 'Client interaction and problem solving'},
+              {rs: 'Customizations according to client requirements'},
+              {rs: 'Design Frames according to Bootstrap Template'},
+              {rs: 'Manage task effectively and prioritize accordingly'},
+              {rs: 'Work effectively within collaborative team to identify and resolve issues'},
+              {rs: 'Environment- AngularJS, HTML, CSS, JavaScript, Bootstrap, jQuery, Java, Groovy/Grails'}
+            ]
+          },
+          {
+            project: 'Manufacturing ERP ',
+            responsibility: [
+              {rs: 'Created user interface and navigation structure'},
+              {rs: 'Implemented page designs in standard-complaint dynamic HTML and CSS'},
+              {rs: 'Report development for project using Jasper Report'},
+              {rs: 'Environment- AngularJS, HTML, CSS, JavaScript, Bootstrap, jQuery, Java, Groovy/Grails'}
+            ]
+          },
+          {
+            project: 'Internship ',
+            responsibility: [
+              {rs: 'Develop Static/Dynamic Websites'}
+            ]
+          }
+
+
+        ]
+      }
+
+
     ];
   }
 }

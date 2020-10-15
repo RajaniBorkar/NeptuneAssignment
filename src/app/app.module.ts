@@ -9,7 +9,8 @@ import { SummaryComponent } from './components/details/summary/summary.component
 import { ProfessionalComponent } from './components/details/professional/professional.component';
 import { EducationComponent } from './components/details/education/education.component';
 import { SkillsComponent } from './components/details/skills/skills.component';
-
+import { CommonModule } from "@angular/common";
+import { PersonalComponent } from './components/details/personal/personal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,10 +19,12 @@ import { SkillsComponent } from './components/details/skills/skills.component';
     SummaryComponent,
     ProfessionalComponent,
     EducationComponent,
-    SkillsComponent
+    SkillsComponent,
+    PersonalComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule
   ],
   providers: [],

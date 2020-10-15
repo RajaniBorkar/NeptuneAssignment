@@ -4,6 +4,7 @@ import {SummaryComponent} from "./components/details/summary/summary.component";
 import {ProfessionalComponent} from "./components/details/professional/professional.component";
 import {EducationComponent} from "./components/details/education/education.component";
 import {SkillsComponent} from "./components/details/skills/skills.component";
+import {PersonalComponent} from "./components/details/personal/personal.component";
 
 const routes: Routes = [
   {
@@ -18,6 +19,9 @@ const routes: Routes = [
   },{
     path: 'skills',
     component: SkillsComponent
+  },{
+    path: 'personal',
+    component: PersonalComponent
   },
   {
     path: '',
