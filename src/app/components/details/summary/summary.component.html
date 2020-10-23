@@ -1,26 +1,15 @@
 <section class="resume-section" id="about">
   <div class="resume-section-content">
     <h1 class="mb-0">
-      Rajani
-      <span class="text-primary">Wayal</span>
+      {{title}} {{name}}
+      <span class="text-primary">{{last}}</span>
     </h1>
     <div class="subheading mb-5">
-      Software Developer
+      {{des}}
 
     </div>
-    <p class="lead">Software developer with 6+ years of experience designing and building
-      responsive web design</p>
-    <ul>
-     <li>Having good knowledge with hand-coded HTML, CSS, JavaScript & jQuery, AJAX and Angular and AngularJS.</li>
-     <li>Quite knowledge of server-side CSS pre-processing platforms, such as LESS.</li>
-     <li>Basic Knowledge of Core Java, Groovy & Grails Basics, Play Scala, SQL/PLSQL Basics.</li>
-     <li>Strong ability to learn existing applications quickly and able to make modifications.</li>
-     <li>Successfully implemented individual module development for the web application.</li>
-     <li>Experience working with both waterfall and agile development methodologies.</li>
-     <li>Having good knowledge about client-side scripting languages. </li>
-
-    </ul>
-
+    <p class="lead">{{heading}}</p>
+    <div [innerHTML]="summary"></div>
 
   </div>
 </section>

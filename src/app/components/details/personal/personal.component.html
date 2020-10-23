@@ -7,29 +7,29 @@
           <tbody>
           <tr>
             <th class="w-20" scope="row"><i class="fas fa-address-card"></i> </th>
-            <td>Pimple Guarav, Pune - 411069</td>
+            <td>{{address}}</td>
           </tr>
           <tr>
             <th scope="row"><i class="fas fa-mail-bulk"></i></th>
-            <td><a href="mailto:name@email.com">wayal.rajani@gmail.com</a></td>
+            <td><a href="mailto:name@email.com">{{email}}</a></td>
           </tr>
           <tr>
             <th scope="row"><i class="fas fa-phone"></i> </th>
-            <td>+91 9898776665</td>
+            <td>{{phone}}</td>
           </tr>
 
           <tr>
             <th scope="row"><i class="fas fa-birthday-cake"></i> </th>
-            <td>08/08/1991</td>
+            <td>{{dob}}</td>
           </tr>
           <tr>
             <th scope="row"><i class="fas fa-female"></i></th>
-            <td>Female</td>
+            <td>{{title}}</td>
           </tr>
 
           <tr>
             <th scope="row"><i class="fas fa-language"></i></th>
-            <td>English, Hindi, Marathi</td>
+            <td><span class="mr-1" *ngFor="let data of lang">{{data}}</span></td>
           </tr>
          </tbody>
         </table>

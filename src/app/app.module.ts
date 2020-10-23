@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LeftSideMenuComponent } from './components/shared/left-side-menu.component';
@@ -11,6 +11,10 @@ import { EducationComponent } from './components/details/education/education.com
 import { SkillsComponent } from './components/details/skills/skills.component';
 import { CommonModule } from "@angular/common";
 import { PersonalComponent } from './components/details/personal/personal.component';
+import { AddProtfolioComponent } from './components/details/add-protfolio/add-protfolio.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { NgSelect2Module } from 'ng-select2';
+import { ListProtfolioComponent } from './components/details/list-protfolio/list-protfolio.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,12 +24,17 @@ import { PersonalComponent } from './components/details/personal/personal.compon
     ProfessionalComponent,
     EducationComponent,
     SkillsComponent,
-    PersonalComponent
+    PersonalComponent,
+    AddProtfolioComponent,
+    ListProtfolioComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    EditorModule,
+    NgSelect2Module
   ],
   providers: [],
   bootstrap: [AppComponent]

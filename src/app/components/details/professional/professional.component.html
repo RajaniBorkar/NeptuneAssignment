@@ -5,11 +5,8 @@
       <div class="flex-grow-1">
         <h3 class="mb-0">{{data.dsignation}}</h3>
         <div class="subheading mb-3">{{data.name}}</div>
-        <div *ngFor="let abc of data.info">
-          <p class="font-weight-bold">{{abc.project}}</p>
-          <ul>
-            <li  *ngFor="let rsp of abc.responsibility">{{rsp.rs}}</li>
-          </ul>
+        <div [innerHTML]="gettData(data.info)">
+
         </div>
       </div>
       <div class="flex-shrink-0"><span class="text-primary">{{data.start}} - {{data.end}}</span></div>

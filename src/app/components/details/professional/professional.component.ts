@@ -8,10 +8,19 @@ import {ProfessionalService} from "../../../services/professional.service";
 })
 export class ProfessionalComponent implements OnInit {
   rowData=[];
+  dataAny:any;
   constructor( private professionalService: ProfessionalService) { }
 
   ngOnInit(): void {
-    this.rowData = this.professionalService.getProfessionalData();
+    // this.rowData = this.professionalService.getProfessionalData();
+
+    this.dataAny=JSON.parse(localStorage.getItem(localStorage.getItem('selectedKey')));
+    this.rowData=this.dataAny.professional;
+
   }
+  gettData(abc){
+    return abc;
+  }
+
 
 }

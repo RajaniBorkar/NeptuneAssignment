@@ -19,11 +19,16 @@
     "@angular/platform-browser": "~10.1.0",
     "@angular/platform-browser-dynamic": "~10.1.0",
     "@angular/router": "~10.1.0",
+    "@fortawesome/fontawesome-free": "^5.15.0",
+    "@tinymce/tinymce-angular": "^4.2.0",
     "bootstrap": "^4.5.2",
+    "jquery": "^3.5.1",
+    "ng-select2": "^1.2.3",
     "rxjs": "~6.6.0",
+    "select2": "^4.0.13",
+    "tinymce": "^5.5.1",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2",
-    "@fortawesome/fontawesome-free": "^5.15.0"
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1001.0",

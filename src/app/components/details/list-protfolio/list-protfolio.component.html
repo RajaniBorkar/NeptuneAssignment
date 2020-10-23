@@ -1,0 +1,22 @@
+<section class="resume-section" id="education">
+  <div class="resume-section-content">
+    <h2 class="mb-5">Portfolio List</h2>
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Email</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let data of rowData">
+        <th scope="row"><a href="" (click)="selctPort(data.firstName)">{{data.title}} {{data.firstName}}
+          {{data.lastName}}</a></th>
+        <td>{{data.dob}}</td>
+        <td>{{data.email}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

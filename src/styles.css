@@ -347,3 +347,6 @@ section.resume-section .resume-section-content {
 .dev-icons {
   font-size: 3rem;
 }
+.tox-notifications-container{
+  display: none !important;
+}

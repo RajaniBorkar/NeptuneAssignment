@@ -1,0 +1,24 @@
+.tox-notifications-container{
+  display: none !important;
+}
+section.resume-section {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 5rem;
+  max-width: 75rem;
+}
+.select2-container{
+  width: 100% !important;
+}
+.select2-search__field{
+  width: 100% !important;
+}
+.c-r{
+  color: red !important;
+}
+.lblError{
+  color: red !important;
+}

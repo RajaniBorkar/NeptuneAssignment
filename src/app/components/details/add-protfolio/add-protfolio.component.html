@@ -1,0 +1,416 @@
+<section class="resume-section" id="education">
+  <div class="resume-section-content">
+
+
+    <div class="card m-3">
+      <div class="card-header font-weight-bold">Add New Profile</div>
+      <div class="card-body">
+        <form [formGroup]="registerForm">
+          <div class="form-row">
+            <div class="form-group col">
+              <label>Title <span class="lblError">*</span></label>
+              <select formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
+                <option value=""></option>
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+                <option value="Ms">Ms</option>
+              </select>
+              <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                <div *ngIf="f.title.errors.required">Title is required</div>
+              </div>
+            </div>
+            <div class="form-group col-5">
+              <label>First Name <span class="lblError">*</span></label>
+              <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+              <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+              </div>
+            </div>
+            <div class="form-group col-5">
+              <label>Last Name <span class="lblError">*</span></label>
+              <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+              <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-row">
+
+            <div class="form-group col">
+              <label>Date of Birth <span class="lblError">*</span></label>
+              <input type="date" formControlName="dob" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
+              <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+                <div *ngIf="f.dob.errors.required">Date of Birth is required</div>
+                <div *ngIf="f.dob.errors.pattern">Date of Birth must be a valid date in the format YYYY-MM-DD</div>
+              </div>
+            </div>
+            <div class="form-group col">
+              <label>Email <span class="lblError">*</span></label>
+              <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label>Address</label>
+              <textarea formControlName="address" class="form-control" rows="1"></textarea>
+
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <div class="control-group">
+                  <!-- Password -->
+                  <label>Select Photo</label>
+                  <div class="controls">
+                    <input type="file" (change)="onFileChange($event)" accept="image/*"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           <div class="form-row">
+             <div class="form-group col">
+              <label>Phone No <span class="lblError">*</span> </label>
+              <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+              <div *ngIf="f.phone.errors" class="invalid-feedback">
+                <div *ngIf="f.phone.errors.required">Phone number is required</div>
+                <div *ngIf="f.phone.errors.pattern">Not Valid</div>
+              </div>
+            </div>
+             <div class="form-group col">
+              <label>Skills</label>
+               <ng-select2 formControlName="skill"
+                 [options]="options"
+                 [data]="exampleData"
+                 >
+               </ng-select2>
+            </div>
+             <div class="form-group col">
+              <label>Known Languages</label>
+               <ng-select2 formControlName="lang"
+                 [options]="options"
+                 [data]="langData"
+                 >
+               </ng-select2>
+                 <div *ngIf="f.lang.errors" class="invalid-feedback">
+                   <div *ngIf="f.lang.errors.required">lang is required</div>
+
+                 </div>
+            </div>
+
+          </div>
+          <hr>
+          <div class="card mb-2">
+            <div class="card-header font-weight-bold">Professional Summary</div>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-group col">
+                  <label>Current Designation</label>
+                  <input type="text" formControlName="currentDes" class="form-control" [ngClass]="{ 'is-invalid':
+              submitted && f.currentDes.errors }"/>
+                  <div *ngIf="submitted && f.currentDes.errors" class="invalid-feedback">
+                    <div *ngIf="f.currentDes.errors.required">Current Designation is required</div>
+                  </div>
+                </div>
+                <div class="form-group col">
+                  <label>Profile Heading</label>
+                  <input type="text" formControlName="profileHeading" class="form-control" [ngClass]="{
+              'is-invalid':
+              submitted && f.profileHeading.errors }"/>
+                  <div *ngIf="submitted && f.profileHeading.errors" class="invalid-feedback">
+                    <div *ngIf="f.profileHeading.errors.required">Profile Heading is required</div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label>Summary Points</label>
+                  <!--              <editor  formControlName="desktophtml" [init]='optionsTinymce'></editor>-->
+                  <editor formControlName="summary" id="summary"
+                          [init]="{
+                               height: 250,
+                               branding: false,
+                               statusbar: false,
+                               plugins: 'advlist lists',
+                               toolbar: toolbar_val,
+                               browser_spellcheck: true
+                               }"
+                  ></editor>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="card mb-2">
+            <div class="card-header font-weight-bold">Professional Details
+              <button class="btn btn-primary btn-sm mr-1 float-right" (click)="addProfessional()"><i
+                class="fas fa-plus m-1"></i>Add
+                Organization </button></div>
+            <div class="card-body" formArrayName="professional"
+                 *ngFor="let item of professionalControl; let i = index;">
+              <div [formGroupName]="i">
+                 <div class="row">
+                 <div class="col-12">
+                    <button class="float-right btn btn-sm btn-outline-danger mr-1"
+                            (click)="removeProfessional(i)"><i
+                      class="fas fa-minus m-1"></i>Remove
+                      Organization {{i+1}} </button>
+
+                  </div>
+                  </div>
+                 <div class="form-row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <div class="control-group">
+                      <!-- Password -->
+                      <label for="organizationName">Organization {{i+1}} Name:
+                        <span class="lblError">*</span></label>
+                      <div class="controls">
+                        <input type="text" id="organizationName"
+                               class="form-control"
+                               formControlName="name" [ngClass]="{
+              'is-invalid':
+              submitted && professionalControlIndex(i).name.errors }">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <div class="control-group">
+                      <!-- Password -->
+                      <label >Designation: <span class="lblError">*</span> </label>
+                      <div class="controls">
+                        <input type="text"  class="form-control"
+                               formControlName="dsignation" [ngClass]="{
+              'is-invalid':
+              submitted && professionalControlIndex(i).dsignation.errors }">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                 <div class="form-row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <div class="control-group">
+                      <!-- Password -->
+                      <label>Start Date <span class="lblError">*</span></label>
+                      <div class="controls">
+                        <input type="date" formControlName="start" class="form-control" [ngClass]="{
+                        'is-invalid': submitted && professionalControlIndex(i).start.errors }" />
+                        <div *ngIf="submitted && professionalControlIndex(i).start.errors" class="invalid-feedback">
+                          <div *ngIf="professionalControlIndex(i).start.errors.required">Date is required</div>
+                        </div>
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <div class="control-group">
+                      <!-- Password -->
+                      <label>End Date <span class="lblError">*</span></label>
+                      <div class="controls">
+                        <input type="date" formControlName="end" class="form-control" [ngClass]="{
+                        'is-invalid': submitted && professionalControlIndex(i).end.errors }" />
+                        <div *ngIf="submitted && professionalControlIndex(i).end.errors" class="invalid-feedback">
+                          <div *ngIf="professionalControlIndex(i).end.errors.required">Date is required</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+                </div>
+                 <div class="form-row">
+                    <div class="col">
+                      <div class="form-group">
+                        <div class="control-group">
+                          <!-- Password -->
+                          <label>Add Your Projects</label>
+                          <div class="controls">
+
+                                                        <editor formControlName="info" id="{{i}}"
+                                                                [init]="{
+                                                          height: 250,
+                               branding: false,
+                               statusbar: false,
+                               plugins: 'advlist lists',
+                               toolbar: toolbar_val,
+                               browser_spellcheck: true
+                                                           }"
+                                                        ></editor>
+
+                          </div>
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+<!--                  <button (click)="addInfo(i)">Add Project Details</button>-->
+<!--                  <div formArrayName="info"-->
+<!--                       *ngFor="let item of infoControl(i); let p = index;">-->
+<!--                    <div [formGroupName]="p">-->
+<!--                  <div class="form-row">-->
+<!--                     <div class="col">-->
+<!--                      <div class="form-group">-->
+<!--                        <div class="control-group">-->
+<!--                          &lt;!&ndash; Password &ndash;&gt;-->
+<!--                          <label>Project Name </label>-->
+<!--                          <div class="controls">-->
+<!--                            <input type="date" formControlName="project" class="form-control" />-->
+<!--&lt;!&ndash;                            <div *ngIf="submitted && infoControlIndex(i,p).project.errors"&ndash;&gt;-->
+<!--&lt;!&ndash;                                 class="invalid-feedback">&ndash;&gt;-->
+<!--&lt;!&ndash;                              <div *ngIf="infoControlIndex(i,p).project.errors.required">project is required</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  <div class="form-row">-->
+<!--                     <div class="col">-->
+<!--                      <div class="form-group">-->
+<!--                        <div class="control-group">-->
+<!--                          &lt;!&ndash; Password &ndash;&gt;-->
+<!--                          <label>Responsibility </label>-->
+<!--                          <div class="controls">-->
+<!--                            <editor formControlName="responsibility" id="{{p}}"-->
+<!--                                    [init]="{-->
+<!--                               height: 250,-->
+<!--                               branding: false,-->
+<!--                               statusbar: false,-->
+<!--                               plugins: pluginsVal,-->
+<!--                               toolbar: toolbar_val,-->
+<!--                               browser_spellcheck: true-->
+<!--                               }"-->
+<!--                            ></editor>-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+
+              </div>
+
+            </div>
+          </div>
+          <hr>
+          <div class="card mb-2">
+            <div class="card-header font-weight-bold">Education Details
+              <button class="btn btn-primary btn-sm mr-1 float-right" (click)="addEducation()"><i
+                class="fas fa-plus m-1"></i>Add
+                Education
+              </button>
+            </div>
+            <div class="card-body" formArrayName="education"
+                 *ngFor="let item of educationArrayControl; let i = index;">
+              <div [formGroupName]="i">
+                <div class="row">
+                  <button class="btn btn-sm btn-outline-danger mr-1 col-12"
+                          (click)="removeEducation(i)"><i
+                    class="fas fa-minus m-1"></i>Remove
+                    Education Details {{i + 1}} </button>
+
+                </div>
+                <div class="form-row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <div class="control-group">
+                        <!-- Password -->
+                        <label for="organizationName">University {{i + 1}} Name:
+                        </label>
+                        <div class="controls">
+                          <input type="text"
+                                 class="form-control"
+                                 formControlName="university">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <div class="control-group">
+                        <!-- Password -->
+                        <label>Degree Name</label>
+                        <div class="controls">
+                          <input type="text" class="form-control"
+                                 formControlName="degree">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-4">
+                    <div class="form-group">
+                      <div class="control-group">
+                        <label>Passing Year</label>
+                        <div class="controls">
+                          <input type="date" formControlName="year" class="form-control"/>
+
+                        </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="form-group">
+                      <div class="control-group">
+                        <!-- Password -->
+                        <label>Specialisation</label>
+                        <div class="controls">
+                          <input type="text" formControlName="spcl" class="form-control"/>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="form-group">
+                      <div class="control-group">
+                        <!-- Password -->
+                        <label>Grade</label>
+                        <div class="controls">
+                          <input type="text" formControlName="grade" class="form-control"/>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <div *ngIf="formValid" class="c-r mb-2">form is not valid</div>
+            <button class="btn btn-primary mr-1" (click)="onSubmit()">Save Profile</button>
+            <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

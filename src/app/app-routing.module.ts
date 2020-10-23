@@ -5,6 +5,8 @@ import {ProfessionalComponent} from "./components/details/professional/professio
 import {EducationComponent} from "./components/details/education/education.component";
 import {SkillsComponent} from "./components/details/skills/skills.component";
 import {PersonalComponent} from "./components/details/personal/personal.component";
+import {AddProtfolioComponent} from "./components/details/add-protfolio/add-protfolio.component";
+import {ListProtfolioComponent} from "./components/details/list-protfolio/list-protfolio.component";
 
 const routes: Routes = [
   {
@@ -22,6 +24,12 @@ const routes: Routes = [
   },{
     path: 'personal',
     component: PersonalComponent
+  },{
+    path: 'portfolio/add',
+    component: AddProtfolioComponent
+  },{
+    path: 'portfolio/list',
+    component: ListProtfolioComponent
   },
   {
     path: '',
