@@ -15,9 +15,13 @@ export class ListProtfolioComponent implements OnInit {
   ngOnInit(): void {
     debugger;
     let archive = [];
+    let j=0;
       for (let i = 0; i<localStorage.length; i++) {
-        if(localStorage.key(i)!='selectedKey')
-      archive[i] = JSON.parse(localStorage.getItem(localStorage.key(i)));
+        if(localStorage.key(i)!='selectedKey'){
+          archive[j] = JSON.parse(localStorage.getItem(localStorage.key(i)));
+          j++;
+        }
+
       }
     this.rowData=archive;
   }

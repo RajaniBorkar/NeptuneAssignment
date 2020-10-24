@@ -1,10 +1,11 @@
-import {Component, OnInit, TemplateRef} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit, TemplateRef} from '@angular/core';
 import { Location } from "@angular/common";
 import {Router} from "@angular/router";
 import {ProfessionalService} from "../../services/professional.service";
 
 @Component({
   selector: 'app-left-side-menu',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './left-side-menu.component.html',
   styleUrls: ['./left-side-menu.component.css']
 })

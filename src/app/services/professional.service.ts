@@ -7,7 +7,7 @@ import {Validators} from "@angular/forms";
 export class ProfessionalService {
 globalData;
   constructor() {
-    this.globalData={firstName:'Rajani',lastName:'Wayal', currentDes:'Software Developer', profileHeading:'Software' +
+    this.globalData={title:'Mrs',firstName:'Rajani',lastName:'Wayal', currentDes:'Software Developer', profileHeading:'Software' +
         ' developer with 6+ years of experience designing and building responsive web design',summary:'<ul>\n' +
         '    <li>Having good knowledge with hand-coded HTML, CSS, JavaScript & jQuery, AJAX and Angular and AngularJS.</li>\n' +
         '    <li>Quite knowledge of server-side CSS pre-processing platforms, such as LESS.</li>\n' +
@@ -21,7 +21,7 @@ globalData;
       professional:[
         {
         name: 'Sigma Systems Pvt Ltd', dsignation: 'SOFTWARE DEVELOPER', start: 'May 2016', end: 'present' +
-          ' 2016', info:'<ul ><li >Develop individual modules according to requirement </li><li >Developed the Front End User Interface using HTML, JavaScript, Jquery</li><li >Identify ways to improve UI design and development</li><li >Build custom JavaScript MVC apps using similar framework</li><li >Manage task effectively and prioritize accordingly</li><li >Work effectively within collaborative team to identify and resolve issues</li><li >Engage in end to end system design and development processes</li><li >Ensure that application releases are packaged and deployed to the production</li><li >Environment- HTML, CSS, JavaScript, Bootstrap, jQuery, Java, Play/Scala</li></ul>'
+          ' ', info:'<ul ><li >Develop individual modules according to requirement </li><li >Developed the Front End User Interface using HTML, JavaScript, Jquery</li><li >Identify ways to improve UI design and development</li><li >Build custom JavaScript MVC apps using similar framework</li><li >Manage task effectively and prioritize accordingly</li><li >Work effectively within collaborative team to identify and resolve issues</li><li >Engage in end to end system design and development processes</li><li >Ensure that application releases are packaged and deployed to the production</li><li >Environment- HTML, CSS, JavaScript, Bootstrap, jQuery, Java, Play/Scala</li></ul>'
       },
         {
           name: 'Yogi Softech Pvt Ltd', dsignation: 'SOFTWARE DEVELOPER', start: 'Nov 2013', end: 'April 2016',
@@ -58,8 +58,8 @@ globalData;
       email: 'wayal.rajani@gmail.com',
       phone: '+91 9898776665',
       lang: ['English', 'Hindi', 'Marathi'],
-      address: 'Pimple Guarav, Pune - 411069',
-      title:'Mrs'
+      address: 'Pimple Guarav, Pune - 411069'
+
 
 
     };

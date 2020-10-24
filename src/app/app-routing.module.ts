@@ -7,6 +7,8 @@ import {SkillsComponent} from "./components/details/skills/skills.component";
 import {PersonalComponent} from "./components/details/personal/personal.component";
 import {AddProtfolioComponent} from "./components/details/add-protfolio/add-protfolio.component";
 import {ListProtfolioComponent} from "./components/details/list-protfolio/list-protfolio.component";
+import {AppComponent} from "./app.component";
+import {LeftSideMenuComponent} from "./components/shared/left-side-menu.component";
 
 const routes: Routes = [
   {

@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms'
 import {AsyncSubject, Observable, Subject} from "rxjs";
 import {ProfessionalService} from "../../../services/professional.service";
@@ -21,6 +21,7 @@ export class AddProtfolioComponent implements OnInit {
   toolbar_val=  'undo redo | styleselect | bullist numlist| bold italic underline Strikethrough | forecolor backcolor | fontselect fontsizeselect | alignleft aligncenter alignright alignjustify |superscript subscript | outdent indent';
   formValid=false;
   tinymce: any;
+  @ViewChild('inputFile') myInputVariable: ElementRef;
   constructor(private fb: FormBuilder, private cd: ChangeDetectorRef,private professionalService: ProfessionalService,private skillService:SkillService,private router:Router) { }
 
   ngOnInit(): void {
@@ -164,7 +165,10 @@ export class AddProtfolioComponent implements OnInit {
     localStorage.setItem('selectedKey', this.registerForm.controls.firstName.value);
     this.submitted = false;
     this.registerForm.reset();
-    this.router.navigate(['/summary']);
+    this.router.navigate(['/summary'])
+      .then(() => {
+        window.location.reload();
+      });
   }
 
   onReset() {
@@ -220,9 +224,15 @@ return info;
       const [file] = event.target.files;
       reader.readAsDataURL(file);
 
-      reader.onload = () => {
-        this.registerForm.controls['img'].setValue(reader.result);
-              };
+      if(file.size > 2097152){
+        this.myInputVariable.nativeElement.value = '';
+        alert("File is too big!!!! It should be less than 2 mb");
+      }else {
+        reader.onload = () => {
+          this.registerForm.controls['img'].setValue(reader.result);
+        };
+      }
+
     }
   }
 
